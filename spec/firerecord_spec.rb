@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-class Variant < FireRecord
+class Variant < Firerecord::Model
   attribute(:size, String, null: false)
   attribute(:color, String, null: false)
   attribute(:available, Integer, null: false)
 
-  belongs_to(:product)
-  belongs_to(:shop)
+  #belongs_to(:product)
+  #belongs_to(:shop)
 end
 
-class Product < FireRecord
+class Product < Firerecord::Model
   attribute(:name, String, null: false)
   attribute(:price, Float, null: false)
   attribute(:available, Boolean, null: false, default: true)
 
-  has_many(:variants)
-  belongs_to(:shop)
+  #has_many(:variants)
+  #belongs_to(:shop)
 end
 
 RSpec.describe Firerecord do
   let(:product) do
-    Product.create(
+    Product.new(
       name: SecureRandom.uuid,
       price: (20..1000).to_a.sample,
       available: false,
@@ -43,4 +43,6 @@ RSpec.describe Firerecord do
       ]
     )
   end
+
+  it { expect(product.name).not_to be nil }
 end

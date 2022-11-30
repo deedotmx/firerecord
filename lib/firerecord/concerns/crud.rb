@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Firerecord::Model::Crud
+module Firerecord::Concerns::Crud
   def self.create(**attributes)
   end
 

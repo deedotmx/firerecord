@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Firerecord::Model::Queries
+module Firerecord::Concerns::Queries
   def self.where(**args)
   end
 

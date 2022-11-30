@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Firerecord::Model::Relational
+module Firerecord::Concerns::Relational
   def self.has_many(name, **options)
   end
 

@@ -1,13 +1,28 @@
 # frozen_string_literal: true
 
-require_relative("model/config")
-require_relative("model/crud")
-require_relative("model/queries")
-require_relative("model/relational")
+require_relative("concerns/config")
+# require_relative("concerns/crud")
+# require_relative("concerns/queries")
+# require_relative("concerns/relational")
 
-module Firerecord::Model
-  include(Firerecord::Model::Config)
-  include(Firerecord::Model::Crud)
-  include(Firerecord::Model::Queries)
-  include(Firerecord::Model::Relational)
+module Boolean; end
+class TrueClass; include Boolean; end
+class FalseClass; include Boolean; end
+
+class Firerecord::Model
+  # include(Firerecord::Concerns::Config)
+  #extend(Firerecord::Concerns::Crud)
+  #extend(Firerecord::Concerns::Queries)
+  #extend(Firerecord::Concerns::Relational)
+
+  define_singleton_method(:attribute) do |name, kind, **rest|
+    # send(:define_method, name.to_sym, ->() { instance_variable_get("@" + name.to_s) })
+  end
+
+  # attr_reader(:name)
+
+  # define_singleton_method(:new) do |**args|
+  #   @name = args[:name]
+  #   args
+  # end
 end

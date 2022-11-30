@@ -41,3 +41,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Firerecord project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/firerecord/blob/main/CODE_OF_CONDUCT.md).
+
+
+## Sources
+
+- https://medium.com/@MaijaBarrins/dynamically-creating-classes-with-ruby-813d3aa0dfe3
+- http://www.monkeyandcrow.com/blog/building_classes_dynamically/
+- https://gist.github.com/harrisgca/e16c170777fe045fa6f2
+- https://www.seancdavis.com/posts/dynamic-attributes-on-instances-in-ruby/
