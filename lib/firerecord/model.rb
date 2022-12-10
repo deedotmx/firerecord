@@ -16,7 +16,14 @@ class Firerecord::Model
   #extend(Firerecord::Concerns::Relational)
 
   define_singleton_method(:attribute) do |name, kind, **rest|
-    # send(:define_method, name.to_sym, ->() { instance_variable_get("@" + name.to_s) })
+    send(:define_method, name.to_sym, ->() { instance_variable_get("@" + name.to_s) })
+    send(:define_method, "#{name}=", ->(val) { instance_variable_set("@#{name}", val) })
+  end
+
+  def initialize(**opts)
+    opts.each do |k,v|
+      send("#{k}=", v)
+    end
   end
 
   # attr_reader(:name)

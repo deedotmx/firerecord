@@ -24,23 +24,23 @@ RSpec.describe Firerecord do
       name: SecureRandom.uuid,
       price: (20..1000).to_a.sample,
       available: false,
-      variants: [
-        {
-          size: "XS",
-          color: 'blue',
-          available: 2
-        },
-        {
-          size: "S",
-          color: 'blue',
-          available: 1
-        },
-        {
-          size: "M",
-          color: 'blue',
-          available: 10
-        }
-      ]
+      # variants: [
+      #   {
+      #     size: "XS",
+      #     color: 'blue',
+      #     available: 2
+      #   },
+      #   {
+      #     size: "S",
+      #     color: 'blue',
+      #     available: 1
+      #   },
+      #   {
+      #     size: "M",
+      #     color: 'blue',
+      #     available: 10
+      #   }
+      # ]
     )
   end
 
